@@ -28,7 +28,7 @@
     console.log(result);
   };
 
-  const arr = [22, 23, 34, 35, 67, 0];
+  const arr = [];
 
   const obtenerNumeros = () => {
     let number = 1;
