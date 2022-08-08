@@ -7,6 +7,7 @@
 /* 7. hacer una funcion de tipo void(no tiene return) llama "positivoNegativoCero" que reciba un numero po valor y una variable por referenecia. que analice el numero y escriba variable recibida por referencia con |A: 1 si el numero es positivo |B: -1 si el numero es negativo |C: 0 si el numero es cero*/
 
 {
+  //1
   const producto = (articulo, cantidad) => articulo * cantidad;
   const priceSell = (artPrice, cantArt) => {
     const totalSell = producto(artPrice, cantArt);
@@ -19,7 +20,9 @@
   const mayor = (int1, int2) => (int1 === 0 ? 0 : int1 > int2 ? int1 : int2);
   mayor(22, 12);
 }
+
 {
+  //2/3
   const par = (int1) => (int1 % 2 === 0 ? 1 : 0);
   const verificacionPares = (arr) => {
     const arrMap = arr.map((e) => par(e));
@@ -42,4 +45,24 @@
   const metodoParaPares = (arr) => verificacionPares(arr);
   metodoParaPares(arr);
   console.log(arr);
+}
+
+{
+  const primo = (int) => {
+    let result = 0;
+    if (int !== 0 && int !== 1) {
+      for (let index = 1; index <= int; index++) {
+        int % index === 0 ? result++ : "";
+      }
+      result > 2
+        ? console.log(`El numero ${int} no es un numero primo`)
+        : console.log(`El numero ${int} es un numero primo`);
+    }
+  };
+
+  const primoFunctions = (int) => {
+    int.map((element) => primo(element));
+  };
+
+  primoFunctions([1, 2, 3, 4, 5, 6, 7]);
 }
