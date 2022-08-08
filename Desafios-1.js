@@ -14,3 +14,32 @@
   };
   priceSell(322, 50);
 }
+
+{
+  const mayor = (int1, int2) => (int1 === 0 ? 0 : int1 > int2 ? int1 : int2);
+  mayor(22, 12);
+}
+{
+  const par = (int1) => (int1 % 2 === 0 ? 1 : 0);
+  const verificacionPares = (arr) => {
+    const arrMap = arr.map((e) => par(e));
+    let result = 0;
+    arrMap.filter((x) => (x === 1 ? (result += x) : ""));
+    console.log(result);
+  };
+
+  const arr = [22, 23, 34, 35, 67, 0];
+
+  const obtenerNumeros = () => {
+    let number = 1;
+    while (number !== 0) {
+      const ingreso = Number(prompt());
+      number = ingreso;
+      ingreso !== 0 ? arr.push(ingreso) : "";
+    }
+  };
+
+  const metodoParaPares = (arr) => verificacionPares(arr);
+  metodoParaPares(arr);
+  console.log(arr);
+}
