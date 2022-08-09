@@ -111,9 +111,15 @@
 
   const pago = (monto) => {
     const total = monto.map((e) => {
-      return { articulo: e.articulo, cuotasMensuales: e.monto / e.cuotas };
+      const cuotasMensuales = Math.round(e.monto / e.cuotas);
+
+      return {
+        articulo: e.articulo,
+        montoTotal: e.monto,
+        cuotasMensuales,
+      };
     });
-    console.log(total);
+    total.map((e) => console.log(e));
   };
   pago(funcPagos());
 }
