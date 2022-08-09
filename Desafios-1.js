@@ -132,10 +132,10 @@
 
 {
   const positivoNegativoCero = (int) => {
-    if (int === 0) return;
-    if (int < 0) return "es un numero negativo";
+    if (int === 0) return "C: el numero es cero";
+    if (int < 0) return "B:es un numero negativo";
     else {
-      return "es un numero positivo";
+      return "A:es un numero positivo";
     }
   };
   const resultado = positivoNegativoCero(22);
