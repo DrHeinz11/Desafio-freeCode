@@ -50,18 +50,33 @@
 {
   const primo = (int) => {
     let result = 0;
+    const arrPromedio = [];
     if (int !== 0 && int !== 1) {
       for (let index = 1; index <= int; index++) {
         int % index === 0 ? result++ : "";
       }
-      result > 2
+      result > 2 ? "" : arrPromedio.push(int);
+      /* result > 2
         ? console.log(`El numero ${int} no es un numero primo`)
         : console.log(`El numero ${int} es un numero primo`);
+    */
     }
+    return arrPromedio;
   };
 
   const primoFunctions = (int) => {
-    int.map((element) => primo(element));
+    const result = int.map((element) => primo(element));
+    const flatten = result.flat();
+    const reducer = flatten.reduce(
+      (intValue, curValue) => intValue + curValue,
+      0
+    );
+    console.log(flatten);
+    console.log(reducer);
+    const promedios = (total, divisor) => total / divisor;
+
+    const resultadoPromedio = promedios(reducer, flatten.length);
+    console.log(resultadoPromedio);
   };
 
   primoFunctions([1, 2, 3, 4, 5, 6, 7]);
