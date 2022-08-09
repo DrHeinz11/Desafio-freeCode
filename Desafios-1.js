@@ -81,3 +81,39 @@
 
   primoFunctions([1, 2, 3, 4, 5, 6, 7]);
 }
+
+{
+  const funcPagos = () => {
+    class Pagos {
+      constructor(monto, articulo, cuotas) {
+        this.articulo = articulo;
+        this.monto = monto;
+        this.cuotas = cuotas;
+      }
+    }
+    const arrayPagos = [];
+    let articulo = 1;
+    while (articulo !== 0) {
+      const numArticulo = Number(prompt("Ingrese el numero de articulo"));
+
+      if (numArticulo !== 0) {
+        const articulos = prompt("Nombre del articulo");
+        const monto = Number(prompt("Ingrese el monto"));
+        const cuotas = Number(prompt("Ingrese las cuotas"));
+        const resume = new Pagos(monto, articulos, cuotas);
+        arrayPagos.push(resume);
+      }
+      articulo = numArticulo;
+    }
+    console.log(arrayPagos);
+    return arrayPagos;
+  };
+
+  const pago = (monto) => {
+    const total = monto.map((e) => {
+      return { articulo: e.articulo, cuotasMensuales: e.monto / e.cuotas };
+    });
+    console.log(total);
+  };
+  pago(funcPagos());
+}
