@@ -105,21 +105,40 @@
       }
       articulo = numArticulo;
     }
-    console.log(arrayPagos);
     return arrayPagos;
   };
 
   const pago = (monto) => {
     const total = monto.map((e) => {
       const cuotasMensuales = Math.round(e.monto / e.cuotas);
-
       return {
         articulo: e.articulo,
         montoTotal: e.monto,
         cuotasMensuales,
       };
     });
+
     total.map((e) => console.log(e));
   };
   pago(funcPagos());
+}
+
+{
+  const sumaResta = (int1, int2) => {
+    return { suma: int1 + int2, resta: int1 - int2 };
+  };
+  console.log(sumaResta(2, 12));
+}
+
+{
+  const positivoNegativoCero = (int) => {
+    if (int === 0) return;
+    if (int < 0) return "es un numero negativo";
+    else {
+      return "es un numero positivo";
+    }
+  };
+  const resultado = positivoNegativoCero(22);
+
+  console.log(resultado);
 }
